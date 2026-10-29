@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dock slots and grid columns (4 to 7). -->
+    <integer name="columns">4</integer>
+
+    <!-- Dock apps, left to right. Missing packages are skipped; everything else goes in the grid. -->
+    <string-array name="dock_apps">
+        <item>com.google.android.youtube.tv</item>
+        <item>com.netflix.ninja</item>
+        <item>com.disney.disneyplus</item>
+        <item>com.wbd.stream</item>
+    </string-array>
+
+    <!-- Never shown in the grid (Settings has its own pill). -->
+    <string-array name="hidden_apps">
+        <item>com.android.tv.settings</item>
+    </string-array>
+
+    <!-- Block theme: apps whose icon is a long word get big blocky letters instead. package|letters|background|letters colour -->
+    <string-array name="block_letters">
+        <item>com.netflix.ninja|N|#000000|#E50914</item>
+        <item>com.disney.disneyplus|D+|#0B1446|#FFFFFF</item>
+        <item>com.wbd.stream|M|#002BE7|#FFFFFF</item>
+    </string-array>
+
+    <!-- What Inputs > Live TV and the TV key open. The Telekom home jumps straight into the player; opening
+         PlayerActivity directly shows "Channel not available" until the app has loaded its channel list. -->
+    <string name="live_tv_component">com.telekom.onetv.tv/com.telekom.atvretail.homeui.view.HomeActivity</string>
+
+    <!-- Telekom management/telemetry apps we disabled. If a firmware or app update turns one back on,
+         Home shows a red alert pill and the Settings menu offers that app's Disable page and a factory
+         reset. These are the agents that would report the box's state back; edit the list for another box. -->
+    <string-array name="guard_telemetry">
+        <item>com.tataelxsi.icx</item>
+        <item>com.dt.onetv.selfcare</item>
+        <item>hu.telekom.ttvtester</item>
+    </string-array>
+</resources>
